@@ -31,8 +31,17 @@ import com.atguigu.gmall.common.bean.PageParamVo;
 @RequestMapping("pms/category")
 public class CategoryController {
 
+
     @Autowired
     private CategoryService categoryService;
+
+
+    @GetMapping("parent/{parentId}")
+    @ApiOperation("查询所有分类")
+    public ResponseVo<List<CategoryEntity>> queryCategory(@PathVariable("parentId") Long parentId){
+        List<CategoryEntity> categoryEntityList =categoryService.queryCategoryById(parentId);
+        return ResponseVo.ok(categoryEntityList);
+    }
 
     /**
      * 列表
