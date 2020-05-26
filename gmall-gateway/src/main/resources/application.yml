@@ -27,4 +27,8 @@ spring:
           uri: lb://wms-service
           predicates:
             - Path=/wms/**
+        - id: search-route
+          uri: lb://search-service
+          predicates:
+            - Host=search.gmall.com
 
