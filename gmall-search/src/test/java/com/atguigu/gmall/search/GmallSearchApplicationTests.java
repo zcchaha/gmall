@@ -44,6 +44,8 @@ class GmallSearchApplicationTests {
 
     @Test
     public void importData(){
+        this.restTemplate.createIndex(Goods.class);
+        this.restTemplate.putMapping(Goods.class);
 
         //定义分页参数
         Integer pageNum = 1;
