@@ -23,6 +23,8 @@ spring:
       uris: http://192.168.77.168:9200
   jackson:
     default-property-inclusion: non_null  # json序列化时不包含为null的字段
+  thymeleaf:
+    cache: false
 feign:
   sentinel:
     enabled: true
