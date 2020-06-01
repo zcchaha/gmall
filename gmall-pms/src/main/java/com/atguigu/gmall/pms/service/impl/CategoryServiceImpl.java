@@ -2,6 +2,7 @@ package com.atguigu.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,6 +38,14 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, CategoryEnt
         }
 
         return this.list(wrapper);
+    }
+
+    @Autowired
+    private CategoryMapper categoryMapper;
+
+    @Override
+    public List<CategoryEntity> queryCategoriesWithSubByPid(Long parentId) {
+        return this.categoryMapper.queryCategoriesWithSubByPid(parentId);
     }
 
 }

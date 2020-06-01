@@ -12,6 +12,7 @@ import com.atguigui.gmall.sms.vo.SkuSaleVo;
 import com.atguigui.gmall.sms.vo.api.GmallSmsApi;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -84,6 +85,9 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
     @Autowired
     private SpuDescService descService;
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     @Override
     @GlobalTransactional
     public void bigSave(SpuVo spuVo) throws FileNotFoundException {
@@ -105,6 +109,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
         saveSku(spuVo, spuVoId);
 
 //                int x = 1 / 0;
+        this.rabbitTemplate.convertAndSend("GMALL_ITEM_EXCHANGE", "item.insert", spuVoId);
 
     }
 

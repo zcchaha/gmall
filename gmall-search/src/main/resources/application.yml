@@ -25,6 +25,15 @@ spring:
     default-property-inclusion: non_null  # json序列化时不包含为null的字段
   thymeleaf:
     cache: false
+  rabbitmq:
+    host: 192.168.77.168
+    virtual-host: /wjzcc
+    username: wjzcc
+    password: wjzcc
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
 feign:
   sentinel:
     enabled: true
