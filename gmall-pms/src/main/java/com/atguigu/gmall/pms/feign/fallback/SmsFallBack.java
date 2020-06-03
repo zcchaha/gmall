@@ -3,7 +3,10 @@ package com.atguigu.gmall.pms.feign.fallback;
 import com.atguigu.gmall.common.bean.ResponseVo;
 import com.atguigu.gmall.pms.feign.GmallSmsClient;
 import com.atguigui.gmall.sms.vo.SkuSaleVo;
+import com.atguigui.gmall.sms.vo.vo.ItemSaleVo;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author ZCC
@@ -14,5 +17,10 @@ public class SmsFallBack implements GmallSmsClient {
 
     public ResponseVo<Object> saveSkuSaleInfo(SkuSaleVo skuSaleVo) {
         return ResponseVo.fail("保存营销信息失败");
+    }
+
+    @Override
+    public ResponseVo<List<ItemSaleVo>> querySaleVosBySkuId(Long skuId) {
+        return ResponseVo.fail("查询营销信息失败");
     }
 }
