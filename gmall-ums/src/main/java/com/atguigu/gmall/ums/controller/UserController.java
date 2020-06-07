@@ -50,7 +50,7 @@ public class UserController {
     @GetMapping("query")
     public ResponseVo<UserEntity> queryUser(@RequestParam("username")String username,@RequestParam("password")String password){
         UserEntity userEntity = this.userService.queryUser(username,password);
-        return ResponseVo.ok();
+        return ResponseVo.ok(userEntity);
     }
 
     /**

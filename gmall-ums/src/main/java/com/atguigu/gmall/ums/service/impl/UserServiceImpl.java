@@ -35,7 +35,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
 
     @Override
     public UserEntity queryUser(String username, String password) {
-        UserEntity userEntity = this.getOne(new QueryWrapper<UserEntity>().eq("username", username));
+        UserEntity userEntity = this.getOne(new QueryWrapper<UserEntity>().eq("username", username).or().eq("phone",username).or().eq("email",username));
         if (userEntity == null){
             throw new UserException("用户名不合法！！！");
         }
