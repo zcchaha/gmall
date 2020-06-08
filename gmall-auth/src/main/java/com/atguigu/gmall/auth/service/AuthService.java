@@ -22,7 +22,7 @@ import java.util.Map;
  * @date 2020/6/7 17:08
  */
 @Service
-@EnableConfigurationProperties(JwtProperties.class)
+//@EnableConfigurationProperties(JwtProperties.class)
 public class AuthService {
 
     @Autowired

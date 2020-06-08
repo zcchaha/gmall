@@ -3,7 +3,10 @@ package com.atguigu.gmall.auth.config;
 import com.atguigu.gmall.common.utils.RsaUtils;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
@@ -14,17 +17,26 @@ import java.security.PublicKey;
  * @author ZCC
  * @date 2020/6/7 17:06
  */
-@ConfigurationProperties(prefix = "jwt")
+//@ConfigurationProperties(prefix = "jwt")
+@Configuration
 @Data
 @Slf4j
+@RefreshScope
 public class JwtProperties {
 
+    @Value("${jwt.pubKeyPath}")
     private String pubKeyPath;
+    @Value("${jwt.priKeyPath}")
     private String priKeyPath;
+    @Value("${jwt.secret}")
     private String secret;
+    @Value("${jwt.expire}")
     private Integer expire;
+    @Value("${jwt.cookieName}")
     private String cookieName;
+    @Value("${jwt.unick}")
     private String unick;
+
 
     private PublicKey publicKey;
     private PrivateKey privateKey;

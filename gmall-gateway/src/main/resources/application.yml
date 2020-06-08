@@ -35,11 +35,15 @@ spring:
           uri: lb://index-service
           predicates:
             - Host=www.gmall.com, gmall.com
+#          filters:
+#            - Auth=/
 #            - Path=/index/**  如果写在这里，两个断言之间是and关系
         - id: index-route2
           uri: lb://index-service
           predicates:
             - Path=/index/**
+#          filters:
+#            - Auth
         - id: item-route
           uri: lb://item-service
           predicates:
@@ -48,5 +52,14 @@ spring:
           uri: lb://auth-service
           predicates:
             - Host=sso.gmall.com
+        - id: cart-route
+          uri: lb://cart-service
+          predicates:
+            - Host=cart.gmall.com
+#          filters: 即使未登录也可以添加购物车
+#            - Auth=/
       x-forwarded:
         enabled: true
+jwt:
+  pubKeyPath: E:\ideaWorkspase\12-191125\zcc\myOwn\java\rsa\rsa.pub
+  cookieName: GMALL-TOKEN

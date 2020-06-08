@@ -22,10 +22,10 @@ spring:
 feign:
   sentinel:
     enabled: true
-jwt:
-  pubKeyPath: E:\ideaWorkspase\12-191125\zcc\myOwn\java\rsa\rsa.pub
-  priKeyPath: E:\ideaWorkspase\12-191125\zcc\myOwn\java\rsa\rsa.pri
-  secret: hjfkheuio144sdfa@#sda
-  expire: 240
-  cookieName: GMALL-TOKEN
-  unick: unick
+#jwt:
+#  pubKeyPath: E:\ideaWorkspase\12-191125\zcc\myOwn\java\rsa\rsa.pub
+#  priKeyPath: E:\ideaWorkspase\12-191125\zcc\myOwn\java\rsa\rsa.pri
+#  secret: hjfkheuio144sdfa@#sda
+#  expire: 240
+#  cookieName: GMALL-TOKEN
+#  unick: unick
