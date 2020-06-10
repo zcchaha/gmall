@@ -4,7 +4,7 @@ import com.atguigu.gmall.pms.entity.CategoryEntity;
 import com.atguigu.gmall.pms.entity.SkuImagesEntity;
 import com.atguigu.gmall.pms.vo.ItemGroupVo;
 import com.atguigu.gmall.pms.vo.SaleAttrValueVo;
-import com.atguigui.gmall.sms.vo.vo.ItemSaleVo;
+import com.atguigu.gmall.sms.vo.ItemSaleVo;
 import lombok.Data;
 
 import java.math.BigDecimal;

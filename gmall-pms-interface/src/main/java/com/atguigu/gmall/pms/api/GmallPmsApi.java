@@ -152,4 +152,5 @@ public interface GmallPmsApi {
             @RequestParam("skuId")Long skuId
     );
 
+
 }

@@ -1,8 +1,8 @@
-package com.atguigui.gmall.sms.vo.api;
+package com.atguigu.gmall.sms.api;
 
 import com.atguigu.gmall.common.bean.ResponseVo;
-import com.atguigui.gmall.sms.vo.SkuSaleVo;
-import com.atguigui.gmall.sms.vo.vo.ItemSaleVo;
+import com.atguigu.gmall.sms.SkuSaleVo;
+import com.atguigu.gmall.sms.vo.ItemSaleVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

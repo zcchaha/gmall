@@ -9,7 +9,7 @@ import com.atguigu.gmall.pms.entity.*;
 import com.atguigu.gmall.pms.vo.ItemGroupVo;
 import com.atguigu.gmall.pms.vo.SaleAttrValueVo;
 import com.atguigu.gmall.wms.entity.WareSkuEntity;
-import com.atguigui.gmall.sms.vo.vo.ItemSaleVo;
+import com.atguigu.gmall.sms.vo.ItemSaleVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
