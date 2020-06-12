@@ -24,6 +24,15 @@ spring:
     password: root
   redis:
     host: 192.168.77.168
+  rabbitmq:
+    host: 192.168.77.168
+    virtual-host: /wjzcc
+    username: wjzcc
+    password: wjzcc
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
 feign:
   sentinel:
     enabled: true

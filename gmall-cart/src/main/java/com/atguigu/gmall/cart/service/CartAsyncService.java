@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author ZCC
  * @date 2020/6/9 17:49
@@ -35,5 +37,9 @@ public class CartAsyncService {
 
     public void deleteCartByUserIdAndSkuId(String userId, Long skuId) {
         this.cartMapper.delete(new QueryWrapper<Cart>().eq("user_id", userId).eq("sku_id", skuId));
+    }
+
+    public void deleteCartByUserIdAndSkuIds(String userId, List<Long> skuIds) {
+        this.cartMapper.delete(new QueryWrapper<Cart>().eq("user_id", userId).in("sku_id", skuIds));
     }
 }

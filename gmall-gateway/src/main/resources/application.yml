@@ -65,7 +65,7 @@ spring:
           filters:
             - Auth=/
       x-forwarded:
-        enabled: true
+        host-enabled: true
 jwt:
   pubKeyPath: E:\ideaWorkspase\12-191125\zcc\myOwn\java\rsa\rsa.pub
   cookieName: GMALL-TOKEN
