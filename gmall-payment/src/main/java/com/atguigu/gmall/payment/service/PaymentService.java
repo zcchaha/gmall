@@ -48,7 +48,7 @@ public class PaymentService {
         return paymentInfoEntity.getId();
     }
 
-    public PaymentInfoEntity queryPaymentByPayId(String payId) {
+    public PaymentInfoEntity queryPaymentByPayId(Long payId) {
         return this.paymentInfoMapper.selectById(payId);
     }
 
